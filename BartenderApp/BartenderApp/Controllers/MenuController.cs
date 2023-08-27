@@ -15,7 +15,8 @@ namespace BartenderApp.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var cocktails = context.Cocktails.ToList();
+            return View(cocktails);
         }
     }
 }
