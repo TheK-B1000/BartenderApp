@@ -1,5 +1,6 @@
 ﻿using BartenderApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BartenderApp.Controllers
 {
@@ -7,6 +8,11 @@ namespace BartenderApp.Controllers
     {
 
         private readonly DrinksDb context;
+
+        public MenuController(DrinksDb data)
+        {
+            context = data;
+        }
         public IActionResult Index()
         {
             return View();

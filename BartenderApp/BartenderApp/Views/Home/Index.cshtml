@@ -1,9 +1,15 @@
 ﻿<h1>Welcome to Bartender Application</h1>
 
-<div>
-    <a>Order a Cocktail</a>
-</div>
+<html>
+<head>
+    <title>Bartender App - Home</title>
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+</head>
 
-<div>
-    <a>View Order Queue</a>
-</div>
+<main>
+    <div>
+        <a href="@Url.Action("Index", "Menu")" class="btn btn-dark btn-dark-white-text m-2">View Cocktail Menu</a>
+        <a href="@Url.Action("Index", "Queue")" class="btn btn-dark btn-dark-white-text m-2">View Order Queue</a>
+    </div>
+</main>
+</html>
