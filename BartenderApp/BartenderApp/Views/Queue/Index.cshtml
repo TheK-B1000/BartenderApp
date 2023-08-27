@@ -14,12 +14,18 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var order in Model)
+               @if (Model != null)
                 {
-                    <tr>
-                        <td>@order.ID</td>
-                        <td>@order.Cocktail.Name</td>
-                    </tr>
+                    foreach (var order in Model)
+                    {
+                        if (order != null)
+                        {
+                            <tr>
+                                <td>@order.OrderID</td>
+                                <td>@order.CocktailName</td>
+                            </tr>
+                        }
+                    }
                 }
             </tbody>
         </table>

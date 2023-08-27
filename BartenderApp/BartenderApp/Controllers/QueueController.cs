@@ -15,12 +15,7 @@ namespace BartenderApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult OrderQueue()
-        {
-            var orders = context.Orders.Include(o => o.CocktailID).ToList();
+            var orders = context.Orders.ToList();
             return View(orders);
         }
     }
