@@ -20,9 +20,12 @@ namespace BartenderApp.Controllers
 
         public ActionResult PlaceOrder(int cocktailID)
         {
+            var selectedCocktail = context.Cocktails.Find(cocktailID);
+
             var newOrder = new Order
             {
-                CocktailID = cocktailID
+                CocktailID = cocktailID,
+                CocktailName = selectedCocktail.Name
             };
 
             context.Orders.Add(newOrder);

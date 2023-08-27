@@ -17,5 +17,11 @@ namespace BartenderApp.Controllers
         {
             return View();
         }
+
+        public ActionResult OrderQueue()
+        {
+            var orders = context.Orders.Include(o => o.CocktailID).ToList();
+            return View(orders);
+        }
     }
 }
