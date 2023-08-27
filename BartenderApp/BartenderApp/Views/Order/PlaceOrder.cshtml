@@ -1,0 +1,13 @@
+﻿<h2>Place an Order</h2>
+
+<form asp-action="PlaceOrder" method="post">
+    <label for="cocktailID">Select a Cocktail:</label>
+    <select name="cocktailID" required>
+        @foreach (var cocktail in Model)
+        {
+                <option value="@cocktail.ID">@cocktail.Name</option>
+        }
+    </select>
+
+    <input type="submit" value="Place Order" />
+</form>

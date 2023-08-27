@@ -22,13 +22,11 @@
                         <td>@cocktail.Name</td>
                         <td>@cocktail.Description</td>
                         <td>@cocktail.Price.ToString("C")</td>
-                        <td>
-                             <a href="@Url.Action("PlaceOrder", "Order", new { cocktailId = cocktail.ID })">Order</a>
-                        </td>
                     </tr>
                 }
             </tbody>
         </table>
+        <a href="@Url.Action("PlaceOrder", "Order")" class="btn btn-dark btn-dark-white-text m-2">Place Order</a>
     </div>
 </body>
 </html>
