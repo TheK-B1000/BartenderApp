@@ -1,5 +1,6 @@
 ﻿using BartenderApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BartenderApp.Controllers
 {
@@ -15,6 +16,19 @@ namespace BartenderApp.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult PlaceOrder(int cocktailID)
+        {
+            var newOrder = new Order
+            {
+                CocktailID = cocktailID
+            };
+
+            context.Orders.Add(newOrder);
+            context.SaveChanges();
+
+            return RedirectToAction("Index", "Menu");
         }
     }
 }
